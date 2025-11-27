@@ -269,6 +269,21 @@ a{color:inherit;text-decoration:none}
   .header__action-btn span{display:none}
   .header__action-btn{padding:10px 14px}
   .header__action-btn svg{margin:0}
+  
+  /* Ajustar sidebar de redes sociales en tablets */
+  .social-sidebar{
+    left: 12px;
+    padding: 16px 10px;
+    gap: 12px;
+  }
+  .social-sidebar__link{
+    width: 40px;
+    height: 40px;
+  }
+  .social-sidebar__link svg{
+    width: 18px;
+    height: 18px;
+  }
 }
 
 @media (max-width: 980px){
@@ -612,7 +627,15 @@ a{color:inherit;text-decoration:none}
 .floating-plans-banner--right .floating-plans-banner__text h4{font-size:20px}
 .floating-plans-banner--right .floating-plans-banner__text p{font-size:15px}
 
+@media (max-width: 980px){
+  /* Ocultar sidebar de redes sociales en tablets y móviles */
+  .social-sidebar{
+    display: none !important;
+  }
+}
+
 @media (max-width: 768px){
+  
   .floating-plans-banner{max-width:calc(100% - 40px);padding:24px 20px;border-radius:16px}
   .floating-plans-banner__icon{width:80px;height:80px;margin-bottom:4px}
   .floating-plans-banner__text h4{font-size:20px;margin-bottom:10px}
@@ -628,6 +651,11 @@ a{color:inherit;text-decoration:none}
 }
 
 @media (max-width: 560px){
+  /* Asegurar que sidebar de redes sociales esté oculto en móviles */
+  .social-sidebar{
+    display: none !important;
+  }
+  
   .floating-plans-banner{max-width:calc(100% - 32px);padding:20px 16px}
   .floating-plans-banner__icon{width:64px;height:64px}
   .floating-plans-banner__text h4{font-size:18px}
@@ -803,6 +831,92 @@ a{color:inherit;text-decoration:none}
 .btn-whatsapp img {
   width: 32px;
   height: 32px;
+}
+
+/* ===== Iconos de Redes Sociales - Lado Izquierdo ===== */
+.social-sidebar {
+  position: fixed;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 9998;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  padding: 20px 12px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 50px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(224, 49, 49, 0.1);
+  transition: all 0.3s ease;
+}
+
+@media (min-width: 1400px){
+  .social-sidebar{
+    left: 30px;
+  }
+}
+
+.social-sidebar__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: #4a5568;
+  background: #f8f9fa;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  position: relative;
+}
+
+.social-sidebar__link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.social-sidebar__link svg {
+  width: 20px;
+  height: 20px;
+  transition: all 0.3s ease;
+}
+
+/* Colores específicos por red social al hover */
+.social-sidebar__link:hover svg {
+  transform: scale(1.1);
+}
+
+.social-sidebar__link:nth-child(1):hover {
+  background: #1877F2;
+  color: #fff;
+}
+
+.social-sidebar__link:nth-child(2):hover {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  color: #fff;
+}
+
+.social-sidebar__link:nth-child(3):hover {
+  background: #0077B5;
+  color: #fff;
+}
+
+.social-sidebar__link:nth-child(4):hover {
+  background: #000000;
+  color: #fff;
+}
+
+.social-sidebar__link:nth-child(5):hover {
+  background: #FF0000;
+  color: #fff;
+}
+
+.social-sidebar__link:nth-child(6):hover {
+  background: #25D366;
+  color: #fff;
 }
 
 /* ===== Mosaico 2×2 con carruseles verticales ===== */
