@@ -1,10 +1,33 @@
 /* ===== Mobile Nav Toggle ===== */
 const navToggle = document.querySelector('.nav-toggle');
 const nav = document.querySelector('.nav');
-if (navToggle) {
-  navToggle.addEventListener('click', () => {
+if (navToggle && nav) {
+  navToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
     const isOpen = nav.classList.toggle('is-open');
     navToggle.setAttribute('aria-expanded', String(isOpen));
+  });
+  
+  // Cerrar menú al hacer clic fuera
+  document.addEventListener('click', (e) => {
+    if (window.matchMedia('(max-width: 980px)').matches) {
+      if (!nav.contains(e.target) && !navToggle.contains(e.target)) {
+        nav.classList.remove('is-open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      }
+    }
+  });
+  
+  // Cerrar menú al hacer clic en un enlace
+  nav.querySelectorAll('.nav__link').forEach(link => {
+    if (!link.dataset.mega) { // Solo enlaces que no abren mega menú
+      link.addEventListener('click', () => {
+        if (window.matchMedia('(max-width: 980px)').matches) {
+          nav.classList.remove('is-open');
+          navToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
   });
 }
 
@@ -12,11 +35,26 @@ if (navToggle) {
 document.querySelectorAll('.has-mega > .nav__link').forEach(btn => {
   const id = btn.dataset.mega;
   const panel = document.getElementById(`mega-${id}`);
+  if (!panel) return;
+  
   btn.addEventListener('click', (e) => {
     // Only act like toggle in mobile
     if (window.matchMedia('(max-width: 980px)').matches) {
       e.preventDefault();
-      panel.style.display = panel.style.display === 'grid' ? 'none' : 'grid';
+      e.stopPropagation();
+      const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', !isExpanded);
+      panel.classList.toggle('is-open');
+    }
+  });
+  
+  // Cerrar al hacer clic fuera
+  document.addEventListener('click', (e) => {
+    if (window.matchMedia('(max-width: 980px)').matches) {
+      if (!btn.contains(e.target) && !panel.contains(e.target)) {
+        btn.setAttribute('aria-expanded', 'false');
+        panel.classList.remove('is-open');
+      }
     }
   });
 });
