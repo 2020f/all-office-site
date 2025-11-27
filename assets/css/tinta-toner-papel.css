@@ -1,0 +1,369 @@
+/* ============ Estilos específicos - Tinta, tóner y papel ============ */
+/* Paleta creativa multicolor: Azul (tinta), Púrpura (papel), Verde (reciclaje), Naranja (manuales), Amarillo (suscripciones) */
+
+/* Fondo de la página */
+body.page {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.page main {
+  background: transparent;
+}
+
+/* Banner Hero personalizado - Gradiente multicolor creativo */
+.category-hero {
+  position: relative;
+  min-height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 48px;
+  border-radius: 12px; /* Más redondeado para estilo creativo */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  border: none;
+}
+
+.category-hero__bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #00A8E8 0%, #6C5CE7 50%, #00B894 100%);
+  background-image: url('../img/Imag04.webp');
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.5);
+}
+
+.category-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, 
+    rgba(0, 168, 232, 0.7) 0%, 
+    rgba(108, 92, 231, 0.7) 50%, 
+    rgba(0, 184, 148, 0.7) 100%);
+}
+
+.category-hero__content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #FFFFFF;
+  padding: 80px 20px;
+  max-width: 900px;
+}
+
+.category-hero__title {
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 900;
+  margin: 0 0 20px;
+  color: #FFFFFF;
+  text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.3);
+  letter-spacing: -0.5px;
+}
+
+.category-hero__subtitle {
+  font-size: clamp(18px, 2.5vw, 26px);
+  margin: 0 0 32px;
+  color: #FFFFFF;
+  line-height: 1.7;
+  font-weight: 400;
+  opacity: 0.95;
+}
+
+.category-hero__badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  padding: 10px 24px;
+  border-radius: 20px; /* Más redondeado */
+  font-size: 14px;
+  font-weight: 700;
+  margin-top: 20px;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Grid de subcategorías - Cada tarjeta con color único */
+.category-grid {
+  padding: 48px 0;
+  background: transparent;
+}
+
+.category-grid .grid {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.category-card {
+  background: #FFFFFF;
+  border-radius: 16px; /* Más redondeado para estilo creativo */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+              box-shadow 0.4s ease, 
+              border-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid transparent;
+}
+
+/* Tinta y tóner - Azul cian */
+.category-card:nth-child(1) {
+  border-top: 5px solid #00A8E8;
+}
+
+.category-card:nth-child(1):hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 32px rgba(0, 168, 232, 0.25);
+  border-color: #00A8E8;
+}
+
+.category-card:nth-child(1) .btn {
+  color: #00A8E8;
+  border-color: #00A8E8;
+}
+
+.category-card:nth-child(1) .btn:hover {
+  background: #00A8E8;
+  color: #FFFFFF;
+}
+
+/* Papel fotográfico - Púrpura/violeta */
+.category-card:nth-child(2) {
+  border-top: 5px solid #6C5CE7;
+}
+
+.category-card:nth-child(2):hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 32px rgba(108, 92, 231, 0.25);
+  border-color: #6C5CE7;
+}
+
+.category-card:nth-child(2) .btn {
+  color: #6C5CE7;
+  border-color: #6C5CE7;
+}
+
+.category-card:nth-child(2) .btn:hover {
+  background: #6C5CE7;
+  color: #FFFFFF;
+}
+
+/* Suscripciones y planes - Verde esmeralda */
+.category-card:nth-child(3) {
+  border-top: 5px solid #00B894;
+}
+
+.category-card:nth-child(3):hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 32px rgba(0, 184, 148, 0.25);
+  border-color: #00B894;
+}
+
+.category-card:nth-child(3) .btn {
+  color: #00B894;
+  border-color: #00B894;
+}
+
+.category-card:nth-child(3) .btn:hover {
+  background: #00B894;
+  color: #FFFFFF;
+}
+
+/* Reciclaje - Verde ecológico */
+.category-card:nth-child(4) {
+  border-top: 5px solid #2ECC71;
+}
+
+.category-card:nth-child(4):hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 32px rgba(46, 204, 113, 0.25);
+  border-color: #2ECC71;
+}
+
+.category-card:nth-child(4) .btn {
+  color: #2ECC71;
+  border-color: #2ECC71;
+}
+
+.category-card:nth-child(4) .btn:hover {
+  background: #2ECC71;
+  color: #FFFFFF;
+}
+
+/* Manuales - Naranja/coral */
+.category-card:nth-child(5) {
+  border-top: 5px solid #FF7675;
+}
+
+.category-card:nth-child(5):hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 32px rgba(255, 118, 117, 0.25);
+  border-color: #FF7675;
+}
+
+.category-card:nth-child(5) .btn {
+  color: #FF7675;
+  border-color: #FF7675;
+}
+
+.category-card:nth-child(5) .btn:hover {
+  background: #FF7675;
+  color: #FFFFFF;
+}
+
+.category-card img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  filter: grayscale(10%);
+}
+
+.category-card:hover img {
+  transform: scale(1.05);
+  filter: grayscale(0%);
+}
+
+.category-card__body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 14px;
+  background: #FFFFFF;
+  position: relative;
+}
+
+.category-card__body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, 
+    var(--card-color, transparent) 0%, 
+    transparent 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.category-card:hover .category-card__body::before {
+  opacity: 1;
+}
+
+.category-card h3 {
+  font-size: 22px;
+  font-weight: 800;
+  margin: 0;
+  color: #161A1D;
+  letter-spacing: -0.3px;
+  transition: color 0.3s ease;
+}
+
+.category-card:hover h3 {
+  color: var(--card-color, #161A1D);
+}
+
+.category-card p {
+  margin: 0;
+  color: #6C757D;
+  line-height: 1.7;
+  flex: 1;
+  font-size: 15px;
+}
+
+.category-card .btn {
+  align-self: flex-start;
+  margin-top: auto;
+  border-width: 2px;
+  background: transparent;
+  border-radius: 8px; /* Redondeado */
+  padding: 12px 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 13px;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.category-card .btn:hover {
+  transform: translateX(6px) translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Animaciones de entrada mejoradas */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes colorPulse {
+  0%, 100% {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  }
+  50% {
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+  }
+}
+
+.category-card {
+  animation: fadeInUp 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  opacity: 0;
+}
+
+.category-card:nth-child(1) { 
+  animation-delay: 0.1s; 
+  --card-color: #00A8E8;
+}
+.category-card:nth-child(2) { 
+  animation-delay: 0.2s; 
+  --card-color: #6C5CE7;
+}
+.category-card:nth-child(3) { 
+  animation-delay: 0.3s; 
+  --card-color: #00B894;
+}
+.category-card:nth-child(4) { 
+  animation-delay: 0.4s; 
+  --card-color: #2ECC71;
+}
+.category-card:nth-child(5) { 
+  animation-delay: 0.5s; 
+  --card-color: #FF7675;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .category-hero {
+    min-height: 350px;
+    border-radius: 8px;
+    margin-bottom: 32px;
+  }
+  
+  .category-grid {
+    padding: 32px 0;
+  }
+  
+  .category-grid .grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .category-card {
+    border-radius: 12px;
+  }
+  
+  .category-card:hover {
+    transform: translateY(-6px) scale(1);
+  }
+}
