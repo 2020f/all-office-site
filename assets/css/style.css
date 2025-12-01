@@ -222,6 +222,73 @@ a{color:inherit;text-decoration:none}
 .contact__grid{display:grid;grid-template-columns:2fr 1fr;gap:18px}
 .form label{display:block;margin-bottom:10px}
 .form input,.form textarea{width:100%;padding:10px;border-radius:10px;border:1px solid #ddd;background:#fff}
+.form__actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+.btn--whatsapp-form{background:#25D366;color:#fff;border:none;padding:12px 24px;border-radius:10px;font-weight:600;cursor:pointer;transition:all 0.3s ease;display:inline-flex;align-items:center;gap:8px;font-size:15px}
+.btn--whatsapp-form:hover{background:#20BA5A;transform:translateY(-2px);box-shadow:0 4px 12px rgba(37,211,102,0.3)}
+.btn--whatsapp-form::before{content:"💬";font-size:18px}
+.contact__info{background:var(--white);padding:28px;border-radius:var(--radius);box-shadow:var(--shadow);height:fit-content}
+.contact__info h3{font-size:22px;font-weight:700;color:#2c3e50;margin:0 0 24px;letter-spacing:-0.3px;padding-bottom:16px;border-bottom:2px solid var(--brand)}
+.contact__info-item{margin-bottom:24px}
+.contact__info-item:last-child{margin-bottom:0}
+.contact__info-item strong{display:block;font-size:15px;color:var(--brand);margin-bottom:8px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px}
+.contact__info-item p{margin:0;color:#4a5568;line-height:1.6;font-size:15px}
+.contact__info-item a{color:var(--brand);text-decoration:none;transition:color 0.2s ease}
+.contact__info-item a:hover{color:var(--brand-dark);text-decoration:underline}
+.contact__schedule{display:flex;flex-direction:column;gap:8px;margin-top:8px}
+.contact__schedule p{margin:0;display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid #e8e9eb;font-size:14px}
+.contact__schedule p:last-child{border-bottom:none}
+.contact__schedule span{font-weight:600;color:#2c3e50;min-width:100px}
+.contact__map{margin-top:48px;padding-top:48px;border-top:2px solid #e8e9eb}
+.contact__map h3{font-size:28px;font-weight:700;color:#2c3e50;margin:0 0 24px;letter-spacing:-0.3px;text-align:center}
+.contact__map-wrapper{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);border:1px solid #e8e9eb}
+.contact__map-wrapper iframe{display:block;width:100%;border:none}
+
+/* ============ Animación de Impresora ============ */
+.printer-animation{position:relative;margin-top:32px;padding:24px;background:linear-gradient(135deg, rgba(224,49,49,0.03) 0%, rgba(224,49,49,0.01) 100%);border-radius:12px;border:1px solid rgba(224,49,49,0.1);overflow:hidden;min-height:180px;display:flex;align-items:center;justify-content:center}
+.printer-svg{width:100%;max-width:300px;height:auto;filter:drop-shadow(0 4px 8px rgba(0,0,0,0.1))}
+.printer-body{transition:fill 0.3s ease}
+.printer-top{transition:fill 0.3s ease}
+.printer-screen{animation:screenPulse 2s ease-in-out infinite}
+.printer-light{animation:lightBlink 1.5s ease-in-out infinite}
+
+/* Animación del papel saliendo */
+.paper{transform-origin:center;opacity:0}
+.paper-1{animation:paperOut 3s ease-in-out infinite}
+.paper-2{animation:paperOut 3s ease-in-out infinite 0.5s}
+.paper-3{animation:paperOut 3s ease-in-out infinite 1s}
+
+.paper-line{opacity:0}
+.paper-1 .paper-line{animation:lineAppear 0.3s ease-in 0.2s forwards}
+.paper-2 .paper-line{animation:lineAppear 0.3s ease-in 0.7s forwards}
+.paper-3 .paper-line{animation:lineAppear 0.3s ease-in 1.2s forwards}
+
+@keyframes paperOut{
+  0%{transform:translateY(0) scale(0.95);opacity:0}
+  10%{opacity:1}
+  30%{transform:translateY(-20px) scale(1);opacity:1}
+  70%{transform:translateY(-40px) scale(1);opacity:1}
+  100%{transform:translateY(-60px) scale(0.95);opacity:0}
+}
+
+@keyframes screenPulse{
+  0%,100%{opacity:0.3}
+  50%{opacity:0.5}
+}
+
+@keyframes lightBlink{
+  0%,100%{opacity:1;transform:scale(1)}
+  50%{opacity:0.6;transform:scale(0.9)}
+}
+
+@keyframes lineAppear{
+  0%{opacity:0}
+  100%{opacity:0.6}
+}
+
+/* Efecto hover en la impresora */
+.printer-animation:hover .printer-body{fill:#d0d1d3}
+.printer-animation:hover .printer-top{fill:#e1e2e4}
+.printer-animation:hover .printer-light{fill:#66BB6A;animation-duration:0.8s}
 
 /* ============ Quick Links Section ============ */
 .quick-links{padding:80px 0;background:linear-gradient(180deg, #ffffff 0%, #fafbfc 100%)}
@@ -352,6 +419,13 @@ a{color:inherit;text-decoration:none}
   
   .grid{grid-template-columns:1fr}
   .contact__grid{grid-template-columns:1fr}
+  .contact__map{margin-top:32px;padding-top:32px}
+  .contact__map h3{font-size:24px;margin-bottom:20px}
+  .contact__map-wrapper iframe{height:350px}
+  .contact__info{padding:24px}
+  .contact__info h3{font-size:20px;margin-bottom:20px}
+  .contact__schedule p{font-size:13px}
+  .contact__schedule span{min-width:80px}
   
   /* Ricoh section responsive */
   .ricoh-section{padding:60px 0}
